@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "proyecto2\\ApiCalculadora.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "AplicacionHistorial\\AplicacionHistorial.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

@@ -1,0 +1,51 @@
+﻿<! DOCTYPE html>
+<html>
+<head>
+    <title>Historial Calculadora</title>
+    <link rel="stylesheet" href="~/Content/CSS/estilos.css" />
+
+</head>
+<body>
+    <h1>Historial de Calculadora</h1>
+
+    <div class="botones">
+        <a href="/Historial/Todas" class="boton">Todas</a>
+        <a href="/Historial/Sumas" class="boton">Sumas</a>
+        <a href="/Historial/Restas" class="boton">Restas</a>
+        <a href="/Historial/Multiplicaciones" class="boton">Multiplicaciones</a>
+        <a href="/Historial/Divisiones" class="boton">Divisiones</a>
+    </div>
+
+    <div class="contenedor-tabla">
+
+        @if (ViewBag.Operaciones != null)
+        {
+            <h2>@ViewBag.Titulo</h2>
+            <table>
+                <tr>
+                    <th>Expresión</th>
+                    <th>Resultado</th>
+                    <th>Fecha</th>
+                </tr>
+                @foreach (var op in ViewBag.Operaciones)
+                {
+                    <tr>
+                        <td>@op.expresion</td>
+                        <td>@op.resultado</td>
+                        <td>@op.fecha_operacion.ToString("dd/MM/yyyy")</td>
+                    </tr>
+                }
+            </table>
+        }
+        else
+        {
+            <p>Selecciona una opción para ver los datos.</p>
+        }
+        
+    </div>
+
+    <footer>
+        <p>Kenneth Carter | Ditzel De Gracia</p>
+    </footer>
+</body>
+</html>
